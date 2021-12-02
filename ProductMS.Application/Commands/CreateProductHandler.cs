@@ -20,6 +20,6 @@ namespace ProductMS.Application.Commands
             return productIsSaved;
         }
         private Product Map(ProductDto productDto)
-        => new Product(productDto.Name, productDto.IsActive, productDto.ProductType);
+        => new Product(productDto.Name, productDto.IsActive, productDto.ProductType, productDto.Fee);
     }
 }

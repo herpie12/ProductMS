@@ -7,5 +7,6 @@ namespace ProductMS.Application.DtoModels
         public string Name { get; set; }
         public bool IsActive { get; set; }
         public ProductType ProductType { get; set; }
+        public decimal? Fee { get; set; }
     }
 }

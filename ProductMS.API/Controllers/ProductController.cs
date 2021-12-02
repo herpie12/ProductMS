@@ -38,7 +38,7 @@ namespace ProductMS.API.Controllers
             return await _mediator.Send(new GetProductCountQuery());
         }
 
-        [HttpPost("insertproduct")]
+        [HttpPost("createproduct")]
         public async Task<bool> CreateProduct([FromBody] ProductDto productDto)
         {
             _logger.LogInformation($"----> Insert Product {productDto.Name}");

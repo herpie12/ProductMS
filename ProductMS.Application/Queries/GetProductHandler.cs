@@ -25,7 +25,7 @@ namespace ProductMS.Application.Queries
            Name = product.Name,
            IsActive = product.IsActive,
            ProductType = product.ProductType,
-
+           Fee = product.Fee,
        };
     }
 }

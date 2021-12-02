@@ -5,6 +5,5 @@
         Loans,
         Cards,
         Accounts
-
     }
 }
