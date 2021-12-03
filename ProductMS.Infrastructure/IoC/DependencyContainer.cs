@@ -1,8 +1,9 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using ProductMS.Application.Commands;
+using ProductMS.Application.Commands.CreateProducts;
 using ProductMS.Application.DtoModels;
-using ProductMS.Application.Queries;
+using ProductMS.Application.Queries.GetProductCount;
+using ProductMS.Application.Queries.GetProducts;
 using ProductMS.Domain.Repositories;
 using ProductMS.Infrastructure.Repositories;
 

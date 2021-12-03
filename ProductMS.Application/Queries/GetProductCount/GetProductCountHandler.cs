@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ProductMS.Domain.Repositories;
 
-namespace ProductMS.Application.Queries
+namespace ProductMS.Application.Queries.GetProductCount
 {
     public class GetProductCountHandler : IRequestHandler<GetProductCountQuery, int>
     {

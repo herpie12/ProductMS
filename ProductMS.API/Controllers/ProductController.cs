@@ -1,8 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ProductMS.Application.Commands;
+using ProductMS.Application.Commands.CreateProducts;
 using ProductMS.Application.DtoModels;
-using ProductMS.Application.Queries;
+using ProductMS.Application.Queries.GetProductCount;
+using ProductMS.Application.Queries.GetProducts;
 
 namespace ProductMS.API.Controllers
 {

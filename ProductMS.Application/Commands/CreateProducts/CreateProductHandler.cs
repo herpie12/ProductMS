@@ -3,7 +3,7 @@ using ProductMS.Application.DtoModels;
 using ProductMS.Domain.Models;
 using ProductMS.Domain.Repositories;
 
-namespace ProductMS.Application.Commands
+namespace ProductMS.Application.Commands.CreateProducts
 {
     public class CreateProductHandler : IRequestHandler<CreateProductCommand, bool>
     {

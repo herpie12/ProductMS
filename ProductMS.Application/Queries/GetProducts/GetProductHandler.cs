@@ -3,7 +3,7 @@ using ProductMS.Application.DtoModels;
 using ProductMS.Domain.Models;
 using ProductMS.Domain.Repositories;
 
-namespace ProductMS.Application.Queries
+namespace ProductMS.Application.Queries.GetProducts
 {
     public class GetProductHandler : IRequestHandler<GetProductListQuery, IEnumerable<ProductDto>>
     {
