@@ -26,16 +26,19 @@ namespace ProductMS.Infrastructure.Repositories
 
             product.DeactivateProduct();
 
-            return await _productDbContext.SaveChangesAsync() > 0; ;
+            return await _productDbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> DeleteProduct(int id)
         {
-            var product = await _productDbContext.Products.FirstAsync(p => p.Id == id);
-
+            var product = await _productDbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
+            if (product is null)
+            {
+                throw new ArgumentException($"Product not existing: {id}");
+            }
             _productDbContext.Products.Remove(product);
 
-            return await _productDbContext.SaveChangesAsync() > 0; ;
+            return await _productDbContext.SaveChangesAsync() > 0; 
         }
 
         public async Task<IEnumerable<Product>> GetProducts(CancellationToken cancellationToken)

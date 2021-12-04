@@ -21,7 +21,7 @@ namespace ProductMS.Domain.Models
 
         public void DeactivateProduct()
         {
-            if (IsActive) throw new ArgumentException($"Product is active: {Name}");
+            if (!IsActive) throw new ArgumentException($"Product is already deactivate: {Name}");
 
             IsActive = false;
         }
@@ -29,8 +29,9 @@ namespace ProductMS.Domain.Models
         {
             if (0 > fee)
             {
-                throw new ArgumentException("Invalid balance. " + fee);
+                throw new ArgumentException("Invalid fee: " + fee);
             }
+
             Fee = fee;
         }
 
