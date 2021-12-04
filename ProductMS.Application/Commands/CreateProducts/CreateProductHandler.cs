@@ -21,10 +21,11 @@ namespace ProductMS.Application.Commands.CreateProducts
         {
             var productIsSaved = await _productRepository.CreateProduct(Map(request.ProductDto));
 
-            if (productIsSaved)
-            {
-                _bus.Publish(new ProductCreatedEvent(request.ProductDto.Name, request.ProductDto.IsActive, request.ProductDto.Fee));
-            }
+            //Run rabbitMQ locally; Run docker compose up in the folder RabbitMQ setup
+            //if (productIsSaved)
+            //{
+            //    _bus.Publish(new ProductCreatedEvent(request.ProductDto.Name, request.ProductDto.IsActive, request.ProductDto.Fee));
+            //}
 
             return productIsSaved;
         }
