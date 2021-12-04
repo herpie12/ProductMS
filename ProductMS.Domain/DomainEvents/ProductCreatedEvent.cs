@@ -1,4 +1,4 @@
-﻿namespace ProductMS.Application.Services.EventBus.Events
+﻿namespace ProductMS.Domain.DomainEvents
 {
     public class ProductCreatedEvent : Event
     {

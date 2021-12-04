@@ -1,9 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using ProductMS.Application.Services.EventBus;
+using ProductMS.Domain.DomainEvents;
 using RabbitMQ.Client;
 using System.Text;
 
-namespace ProductMS.Application.Services.EventBus
+namespace ProductMS.Infrastructure.Services.EventBus
 {
     public class RabbitMQBus : IEventBus
     {

@@ -8,6 +8,7 @@ using ProductMS.Application.Queries.GetProducts;
 using ProductMS.Application.Services.EventBus;
 using ProductMS.Domain.Repositories;
 using ProductMS.Infrastructure.Repositories;
+using ProductMS.Infrastructure.Services.EventBus;
 
 namespace ProductMS.Infrastructure.IoC
 {

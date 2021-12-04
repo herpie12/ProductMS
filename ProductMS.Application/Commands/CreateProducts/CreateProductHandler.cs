@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ProductMS.Application.DtoModels;
 using ProductMS.Application.Services.EventBus;
-using ProductMS.Application.Services.EventBus.Events;
+using ProductMS.Domain.DomainEvents;
 using ProductMS.Domain.Models;
 using ProductMS.Domain.Repositories;
 

@@ -1,4 +1,4 @@
-﻿namespace ProductMS.Application.Services.EventBus
+﻿namespace ProductMS.Domain.DomainEvents
 {
     public abstract class Event
     {
