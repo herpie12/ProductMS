@@ -42,7 +42,7 @@ namespace ProductMS.Infrastructure.Repositories
             }
             _productDbContext.Products.Remove(product);
 
-            return await _productDbContext.SaveChangesAsync() > 0; 
+            return await _productDbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<IEnumerable<Product>> GetProducts(CancellationToken cancellationToken)

@@ -8,7 +8,7 @@
         protected Event()
         {
             TimeStamp = DateTime.Now;
-            Guid = Guid.NewGuid();  
+            Guid = Guid.NewGuid();
         }
     }
 }

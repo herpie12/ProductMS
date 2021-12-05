@@ -13,7 +13,7 @@ namespace ProductMS.Application.Commands.DeleteProduct
 
         public async Task<bool> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-           var productIsDeleted = await _productRepository.DeleteProduct(request.Id);
+            var productIsDeleted = await _productRepository.DeleteProduct(request.Id);
 
             return productIsDeleted;
         }
