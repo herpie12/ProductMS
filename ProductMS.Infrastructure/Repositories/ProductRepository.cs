@@ -23,6 +23,10 @@ namespace ProductMS.Infrastructure.Repositories
         public async Task<bool> Deactivate(int id)
         {
             var product = await _productDbContext.Products.FirstAsync(p => p.Id == id);
+            if (product is null)
+            {
+                throw new ArgumentException($"Product does not exist: {id}");
+            }
 
             product.DeactivateProduct();
 
@@ -34,7 +38,7 @@ namespace ProductMS.Infrastructure.Repositories
             var product = await _productDbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product is null)
             {
-                throw new ArgumentException($"Product not existing: {id}");
+                throw new ArgumentException($"Product does not exist: {id}");
             }
             _productDbContext.Products.Remove(product);
 
