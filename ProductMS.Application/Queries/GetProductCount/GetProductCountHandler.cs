@@ -10,9 +10,9 @@ namespace ProductMS.Application.Queries.GetProductCount
         {
             _productRepository = productRepository;
         }
-        public Task<int> Handle(GetProductCountQuery request, CancellationToken cancellationToken)
+        public async Task<int> Handle(GetProductCountQuery request, CancellationToken cancellationToken)
         {
-            return _productRepository.ProductCount();
+            return await _productRepository.ProductCount();
         }
     }
 }
