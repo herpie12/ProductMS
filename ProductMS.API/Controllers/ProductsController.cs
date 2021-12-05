@@ -13,45 +13,47 @@ namespace ProductMS.API.Controllers
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     [Route("api/[controller]")]
-    public class ProductController : Controller
+    public class ProductsController : Controller
     {
-        private readonly ILogger<ProductController> _logger;
+        private readonly ILogger<ProductsController> _logger;
         private readonly IMediator _mediator;
-        //private readonly IDistributedCache _distributedCache;
 
-        public ProductController(ILogger<ProductController> logger, IMediator mediator)
+        public ProductsController(ILogger<ProductsController> logger, IMediator mediator)
         {
             _logger = logger;
             _mediator = mediator;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ProductDto>> Get(CancellationToken cancellationToken)
+        public async Task<IActionResult> Get(CancellationToken cancellationToken)
         {
             _logger.LogInformation("----> Get ProductList");
-            return await _mediator.Send(new GetProductListQuery(), cancellationToken);
+
+            return Ok(await _mediator.Send(new GetProductListQuery(), cancellationToken));
         }
 
         [HttpGet("count")]
-        public async Task<int> GetProductCount()
+        public async Task<IActionResult> GetProductCount()
         {
             _logger.LogInformation("----> Get Product count");
-            return await _mediator.Send(new GetProductCountQuery());
+
+            return Ok(await _mediator.Send(new GetProductCountQuery()));
         }
 
-        [HttpPost("create")]
-        public async Task<bool> AddProduct([FromBody] ProductDto productDto)
+        [HttpPost]
+        public async Task<IActionResult> AddProduct([FromBody] ProductDto productDto)
         {
             _logger.LogInformation($"----> Insert Product {productDto.Name}");
-            return await _mediator.Send(new CreateProductCommand(productDto));
+
+            return Ok(await _mediator.Send(new CreateProductCommand(productDto)));
         }
 
-        [HttpDelete("delete/{id}")]
-        public async Task<bool> DeleteProductById(int id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProductById(int id)
         {
             _logger.LogInformation($"----> deleting Product {id}");
-            return await _mediator.Send(new DeleteProductCommand(id));
-        }
 
+            return Ok(await _mediator.Send(new DeleteProductCommand(id)));
+        }
     }
 }
