@@ -3,5 +3,5 @@ using ProductMS.Application.DtoModels;
 
 namespace ProductMS.Application.Queries.GetProducts
 {
-    public record GetProductListQuery : IRequest<IEnumerable<ProductDto>>;
+    public record GetProductsQuery : IRequest<IEnumerable<ProductDto>>;
 }

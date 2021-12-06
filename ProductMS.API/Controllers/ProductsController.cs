@@ -29,7 +29,7 @@ namespace ProductMS.API.Controllers
         {
             _logger.LogInformation("----> Get ProductList");
 
-            return Ok(await _mediator.Send(new GetProductListQuery(), cancellationToken));
+            return Ok(await _mediator.Send(new GetProductsQuery(), cancellationToken));
         }
 
 

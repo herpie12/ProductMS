@@ -24,8 +24,8 @@ namespace ProductMS.Infrastructure.IoC
 
 
             //Query handlers
-            services.AddTransient<GetProductHandler>();
-            services.AddTransient<IRequestHandler<GetProductListQuery, IEnumerable<ProductDto>>, GetProductHandler>();
+            services.AddTransient<GetProductsQueryHandler>();
+            services.AddTransient<IRequestHandler<GetProductsQuery, IEnumerable<ProductDto>>, GetProductsQueryHandler>();
 
             //Query handlers
             services.AddTransient<GetProductCountHandler>();
