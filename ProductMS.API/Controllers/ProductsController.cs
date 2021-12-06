@@ -33,7 +33,7 @@ namespace ProductMS.API.Controllers
         }
 
 
-        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
         [HttpGet("count")]
         public async Task<IActionResult> GetProductCount()
         {
